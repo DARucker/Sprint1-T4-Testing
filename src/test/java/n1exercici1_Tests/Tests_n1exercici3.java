@@ -2,6 +2,8 @@ package n1exercici1_Tests;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.function.Executable;
+
 import n1exercici3.MonthsException;
 
 public class Tests_n1exercici3 {
@@ -9,12 +11,23 @@ public class Tests_n1exercici3 {
 	private MonthsException monthsException = new MonthsException();
 	
 	@Test
-	public void probarExcepciones() {
-
-		Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {monthsException.retornaMes(11);}, "** El valor elegido está dentro del array. No se producirá la excepción **");		
-		Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {monthsException.retornaMes(15);}, "** El valor elegido está dentro del array. No se producirá la excepción **");
+	public void probarExcepciones()  {
+		
+		//Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {monthsException.retornaMes(11);}, "** El valor elegido estï¿½ dentro del array. No se producirï¿½ la excepciï¿½n **");		
+		Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {monthsException.retornaMes(15);}, "** El valor elegido esta fuera del array.**");
+		Assertions.assertThrows(IndexOutOfBoundsException.class, new Executable() {
+			
+			@Override
+			public void execute() throws Throwable {
+				monthsException.retornaMes(7);
+			}
+		}, "ERROR, el valor solicitado esta dentro del array.");
+	
+	
 	}
 	
+	
+	// Pruebo el test con una excepcion distinta 
 	@Test
 	public void probarExcepcionesControl() {
 
@@ -24,3 +37,4 @@ public class Tests_n1exercici3 {
 	
 	
 }
+

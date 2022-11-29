@@ -1,7 +1,8 @@
 package n2exercici1;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 
 import org.hamcrest.FeatureMatcher;
 import org.hamcrest.Matcher;
@@ -12,13 +13,14 @@ public class UsarHamcrest {
 	
 	@Test
 	public void ControlarElLargoDeMordor() {
-	    assertThat("Mordor", length(is(8)));
+	    assertThat("Mordor", longitudString(is(8)));
 	}
-	public static  Matcher<String> length(Matcher<? super Integer> matcher) {
+	
+	public static  Matcher<String> longitudString(Matcher<? super Integer> matcher) {
 	    return new FeatureMatcher<String, Integer>(matcher, "Una cadena de un largo de: ", "largo") {
 	        @Override
-	        protected Integer featureValueOf(String actual) {
-	          return actual.length();
+	        protected Integer featureValueOf(String stringParaTestear) {
+	          return stringParaTestear.length();
 	        }
 	    };
 	}

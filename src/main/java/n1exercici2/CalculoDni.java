@@ -15,14 +15,5 @@ public class CalculoDni {
 		return resultado;
 		
 	}
-	
-	/*
-	public static void main(String[] args) {
-		
-		CalculoDni cd = new CalculoDni();
-		cd.calcularLetra(55036397);
-		//System.out.println("resto " + resto);
-		//System.out.println(letras.get(resto));
-		
-	}*/
+
 }
