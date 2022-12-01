@@ -4,6 +4,7 @@ public class Dog {
 
 	private String name;
 	private int age;
+	
 	public String getName() {
 		return name;
 	}
@@ -20,5 +21,9 @@ public class Dog {
 		this.name = name;
 		this.age = age;
 	}
+	public Dog() {
+
+	}
+	
 	
 }

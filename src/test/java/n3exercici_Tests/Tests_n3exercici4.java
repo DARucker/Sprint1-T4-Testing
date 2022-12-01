@@ -1,10 +1,14 @@
 package n3exercici_Tests;
 
+import static org.assertj.core.api.Assertions.atIndex;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
+import n3exercici4.Dog;
 import n3exercici4.ObjectsList;
 
 public class Tests_n3exercici4 {
@@ -23,12 +27,20 @@ public class Tests_n3exercici4 {
 	 * i verifica que la llista no conté aquest últim.
 	 */
 	
-	List<Object> objetos = new ArrayList<>();
 	ObjectsList objectList = new ObjectsList();
+	List<Object> objetos = objectList.fillArray();
+	Object Lolo = (Dog) objetos.get(1);
+	Object dog = new Dog();
 	
+	@Test
 	public void pruebas() {
 
-		Assertions.assertThat((objectList.)
+		Assertions.assertThat(objetos).isEmpty();
+	}
+	
+	@Test public void contains() {
+		Assertions.assertThat(objetos).contains(Lolo, 1);
+		
 	}
 
 }
