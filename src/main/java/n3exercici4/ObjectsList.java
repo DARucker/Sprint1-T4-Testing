@@ -14,7 +14,15 @@ public static void main(String[] args) {
 		
 	}
 	
+
+public Object createOjbect() {
 	
+	Object kitty = new Cat("Kitty", 2);
+	
+	return  kitty;
+}
+
+
 	public List<Object> fillArray() {
 		
 		objets1.add(new Dog("Lolo", 4));
@@ -22,6 +30,7 @@ public static void main(String[] args) {
 		objets1.add(new Cat("Michi", 2));
 		objets1.add(new Restaurant("Chuleton", "Balmes", 1));
 		objets1.add(new Restaurant("Resto", "Diagonal", 2));
+		
 		
 		for (Object object : objets1) {
 			System.out.println(object);

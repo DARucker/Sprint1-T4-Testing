@@ -29,4 +29,8 @@ public class Restaurant {
 		this.adress = adress;
 		this.ranking = ranking;
 	}
+	@Override
+	public String toString() {
+		return "Restaurant [name=" + name + ", adress=" + adress + ", ranking=" + ranking + "]";
+	}
 }
