@@ -13,18 +13,9 @@ public class Tests_n1exercici3 {
 	@Test
 	public void probarExcepciones()  {
 		
-		//Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {monthsException.retornaMes(11);}, "** El valor elegido est� dentro del array. No se producir� la excepci�n **");		
 		Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {monthsException.retornaMes(15);}, "** El valor elegido esta fuera del array.**");
-		Assertions.assertThrows(IndexOutOfBoundsException.class, new Executable() {
-			
-			@Override
-			public void execute() throws Throwable {
-				monthsException.retornaMes(7);
-			}
-		}, "ERROR, el valor solicitado esta dentro del array.");
-	
-	
-	}
+		Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {monthsException.retornaMes(7);}, "ERROR, el valor solicitado esta dentro del array.");
+		}
 	
 	
 	// Pruebo el test con una excepcion distinta 
